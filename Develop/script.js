@@ -41,6 +41,9 @@ function writePassword() {
   
   var passwordText = document.querySelector("#password");
   var password = generatePassword()
+
+//create alert loop to ask for parameters of password generation (length, characters used, etc)
+
   function generatePassword() {
     for (var i = 0; i < 5; i++) {
       randomSpecialCharacter();
