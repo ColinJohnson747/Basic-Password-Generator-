@@ -35,24 +35,43 @@ function randomSpecialCharacter() {
     ];
   console.log(randomCharacterSelection);
 }
+var confirmNumbers = confirm("Would you like numbers?");
+var confirmCharacters = confirm("Would you like characters?");
+var confirmUppercase = confirm("Would you like upper case letters?");
+var confirmLowercase = confirm("Would you like lower case letters?");
+var confirmLength = prompt(
+  "How long would you like your password? (8-128 characters)"
+);
 
 // Write password to the #password input
 function writePassword() {
-  
-  var passwordText = document.querySelector("#password");
-  var password = generatePassword()
+  var passwordText = document.getElementById("#password");
+  var password = parseInt( generatePassword());
 
-//create alert loop to ask for parameters of password generation (length, characters used, etc)
-
+  //create alert loop to ask for parameters of password generation (length, characters used, etc)
   function generatePassword() {
-    for (var i = 0; i < 5; i++) {
-      randomSpecialCharacter();
-      randomNumber();
-      randomUppercase();
-      randomLowercase();
+    while (password < parseInt(confirmLength)) {
+      if (confirmLowercase === true) {
+        randomLowercase();
+      } else if (password === parseInt(confirmLength)) {
+        break;
+      } else if (confirmUppercase === true) {
+        randomUppercase();
+      } else if (password === parseInt(confirmLength)) {
+        break;
+      } else if (confirmCharacters === true) {
+        randomSpecialCharacter();
+      } else if (password === parseInt(confirmLength)) {
+        break;
+      } else if (confirmNumbers === true) {
+        randomNumber();
+      } else if (password === parseInt(confirmLength)) {
+        break;
+      }
     }
+    passwordText.value = password;
+    alert("Your password is" + password);
   }
-  passwordText.value = password;
 }
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
