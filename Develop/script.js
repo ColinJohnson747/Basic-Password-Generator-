@@ -9,72 +9,54 @@ var confirmUppercase = confirm("Would you like upper case letters?");
 var confirmLowercase = confirm("Would you like lower case letters?");
 
 var lengthValue = parseInt(confirmLength);
+
 function writePassword() {
   var passwordText = document.getElementById("#password");
   var Password = generatePassword();
 
+  function lowerCase() {
+    var lower = "abcdefghijklmnopqrstuvwxyz".split("");
+    var randomize = Math.floor(Math.random() * 26);
+    return lower[randomize];
+  }
+
+  function upperCase() {
+    var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+    var randomize = Math.floor(Math.random() * 26);
+    return upper[randomize];
+  }
+
+  function numbers() {
+    var numbers = "1234567890".split("");
+    var randomize = Math.floor(Math.random() * 10);
+    return numbers[randomize];
+  }
+  function characters() {
+    var characters = "!@#$%^&*()_+][{}';:<>|?".split("");
+    var randomize = Math.floor(Math.random() * 23);
+    return characters[randomize];
+  }
+
   //create alert loop to ask for parameters of password generation (length, characters used, etc)
   function generatePassword() {
-   
+    if (lengthValue => 8 && lengthValue <= 128){
+      var chosenEntry = [];
 
-    if (confirmCharacters === false) {
-      function generatePasswordLUN() {
-        var length = lengthValue;
-        (charset =
-          "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"),
-          (retVal = "");
-        for (var i = 0, n = charset.length; i < length; ++i) {
-          retVal += charset.charAt(Math.floor(Math.random() * n));
-        }
-        return retVal;
+      if (confirmNumbers === true){
+        chosenEntry.push(numbers);
       }
-    } else if (confirmNumbers === false) {
-      function generatePasswordLUC() {
-        var length = lengthValue;
-        (charset =
-          "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+][{}';:<>|?"),
-          (retVal = "");
-        for (var i = 0, n = charset.length; i < length; ++i) {
-          retVal += charset.charAt(Math.floor(Math.random() * n));
-        }
-        return retVal;
+      if (confirmCharacters === true){
+        chosenEntry.push(characters);
       }
-    } else if (confirmUppercase === false) {
-      function generatePasswordLCN() {
-        var length = lengthValue;
-        (charset =
-          "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+][{}';:<>|?"),
-          (retVal = "");
-        for (var i = 0, n = charset.length; i < length; ++i) {
-          retVal += charset.charAt(Math.floor(Math.random() * n));
-        }
-        return retVal;
-      }
-    } else if (confirmLowercase === false) {
-      function generatePasswordUCN() {
-        var length = lengthValue;
-        (charset =
-          "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+][{}';:<>|?"),
-          (retVal = "");
-        for (var i = 0, n = charset.length; i < length; ++i) {
-          retVal += charset.charAt(Math.floor(Math.random() * n));
-        }
-        return retVal;
-      }
-    } else {
-      function generatePasswordLUCN() {
-        var length = lengthValue;
-        (charset =
-          "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+][{}';:<>|?"),
-          (retVal = "");
-        for (var i = 0, n = charset.length; i < length; ++i) {
-          retVal += charset.charAt(Math.floor(Math.random() * n));
-        }
-        return retVal;
-      }
+      if
+
+
+
+
     }
+
+
   }
 }
-
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
