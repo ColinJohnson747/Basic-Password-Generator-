@@ -42,14 +42,18 @@ function writePassword() {
     if (lengthValue => 8 && lengthValue <= 128){
       var chosenEntry = [];
 
-      if (confirmNumbers === true){
+      if (confirmNumbers === true) {
         chosenEntry.push(numbers);
       }
-      if (confirmCharacters === true){
+      if (confirmCharacters === true) {
         chosenEntry.push(characters);
       }
-      
-
+      if (confirmUppercase === true) {
+        chosenEntry.push(upperCase);
+      }
+      if (confirmLowercase === true) {
+        chosenEntry.push(lowerCase);
+      }
 
 
     }
