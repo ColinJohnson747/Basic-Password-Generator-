@@ -48,8 +48,7 @@ function writePassword() {
       if (confirmCharacters === true){
         chosenEntry.push(characters);
       }
-      if
-
+      
 
 
 
