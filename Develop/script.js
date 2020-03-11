@@ -56,7 +56,7 @@ function generatePassword() {
       confirmNumbers === false
     ) {
       alert(
-        "At least on criteria must be selected.\nPlease refresh and try again."
+        "At least on criteria must be selected. Please refresh and try again."
       );
     }
   } else {
@@ -68,6 +68,7 @@ function generatePassword() {
     pass = pass.concat(chosenEntry[newRandom]());
   }
   return pass;
+  alert(pass);
 }
 
 // Assignment Code
@@ -75,9 +76,9 @@ var generateBtn = document.querySelector("#generate");
 
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.getElementById("#password");
+  var passwordText = document.querySelector("#password");
 
-  passwordText.value = passwordText;
+  passwordText.value = password;
 }
 
 // Add event listener to generate button
