@@ -10,6 +10,7 @@ var confirmLowercase = confirm("Would you like lower case letters?");
 
 var lengthValue = parseInt(confirmLength);
 
+
 function lowerCase() {
   var lower = "abcdefghijklmnopqrstuvwxyz".split("");
   var randomize = Math.floor(Math.random() * 26);
@@ -34,7 +35,7 @@ function characters() {
 }
 
 function generatePassword() {
-  if (lengthValue => 8 && lengthValue <= 128) {
+  if (lengthValue >= 8 && lengthValue <= 128) {
     var chosenEntry = [];
 
     if (confirmNumbers === true) {
@@ -60,7 +61,7 @@ function generatePassword() {
       );
     }
   } else {
-    alert("Please choose a password with a length of 8-128.");
+    alert("Please choose a password with a length of 8-128. Refresh and try again.");
   }
   var pass = "";
   for (var i = 0; i < lengthValue; i++) {
